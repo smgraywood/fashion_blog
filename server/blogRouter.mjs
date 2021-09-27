@@ -9,6 +9,7 @@ blogRouter.get("/", async (request, response) => {
   response.json(blog);
 });
 
+
 blogRouter.use(express.json());
 blogRouter.post("/", async (request, response) => {
   const contact = await db.addBlog(request.body);

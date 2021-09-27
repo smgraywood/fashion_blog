@@ -39,14 +39,15 @@ const BlogsList = ({ blogs, addBlogs }) => {
     <>
       <h1>Fashion for the Four Seasons</h1>
       <h6>Spring, Summer, Fall, Winter</h6>
-      {blogs.map(({ id, Season, image_url, image_description, date }) => (
+      {blogs.map(({ id, season, image_url, image_description, date }) => (
         <ul key={id}>
-          <img src={image_url} alt={blogs.Season} />
-          <li>{Season}</li> <li>{image_description}</li> <li>{date}</li>
+          <h2>{season}</h2> <img src={image_url} alt={blogs.season} />
+          <br />
+          <li>{image_description}</li> <br /> <h3>{date}</h3>
         </ul>
       ))}
-      <button onClick={onSubmit}>Add Blog</button>
-      {showForm ? <h1>This is where the form will be</h1> : null}
+      <button onClick={onSubmit}>Add Comment</button>
+      {showForm ? <h1>This is where the form will be for comments</h1> : null}
     </>
   );
 };
