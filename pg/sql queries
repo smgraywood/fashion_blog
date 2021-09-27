@@ -1,0 +1,37 @@
+CREATE TABLE fashion_blog(ID int generated always as identity, Season text, image_url text, image_description text);
+
+
+INSERT INTO fashion_blog(Season, image_url, image_description, date)
+VALUES
+('Spring', 'https://i.ibb.co/ScyXStt/1Spring.jpg', 'Spring is the perfect time for old yellow dresses, accidental art fairs, and rooftop brunches. Its always a perfect day to tiptoe through the tulips, or the honeysuckle, as the case may be in this sweet yellow lace dress from Forever21+.'),
+('Summer', 'https://i.ibb.co/XDwGmby/2Summer.jpg', 'Summer is a time for STEM. You know what I wanted to be at age 8? A paleontologist.
+You know what I wanted to be at age 13? A heart surgeon.
+You know what I wanted to be at age 18? A researcher and academic.
+All throughout my life I think on some level I knew I wanted to be and was meant to be in STEM.
+
+You know what I wanted to be at age 29?
+An engineer.
+
+Difference this time? Now Im finally talking back to voices saying I cant or I shouldnt and taking power and control of my life for myself. I deserve to be happy and to do something Im really good at. So heres to STEM swimsuits, sunny days, and chasing dreams. 🥂.'),
+('Fall', 'https://i.ibb.co/KhwCV1F/3Fall.jpg', 'Fall is where rainy days and fashion meet to create adorable outfits. Rainy days in Chicago call for yellow dresses from Eloquii, red lipstick, boots from Amazon, and new haircuts.'),
+('Winter', 'https://i.ibb.co/vzG787K/4Winter.jpg', 'Winter may be the best time of all to bring out bright colors to combat the dark days. This black honeycomb dress is from Eloquii, and this mustard yellow coat is from Asos Curve, two of my absolute favorite brands for plus size clothing ❤️.');
+
+
+ALTER TABLE fashion_blog
+ADD date text;
+
+UPDATE fashion_blog 
+SET date='JUNE 1, 2019' 
+WHERE ID= 1;
+
+UPDATE fashion_blog 
+SET date='APRIL 29, 2021' 
+WHERE ID= 2;
+
+UPDATE fashion_blog 
+SET date='FEBRUARY 20, 2018' 
+WHERE ID= 3;
+
+UPDATE fashion_blog 
+SET date='DECEMBER 16, 2019' 
+WHERE ID= 4;
