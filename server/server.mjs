@@ -11,6 +11,9 @@ app.get("/api/ping", (request, response) =>
   response.json({ response: "pong" }),
 );
 
+// blogRouter.post("/api/fashion_blog", async(request, response) => {const post = await db.addPost();
+// response.json(post);});
+
 if (process.env?.SERVE_REACT?.toLowerCase() === "true") {
   app.use(
     express.static("/app", {

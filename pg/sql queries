@@ -35,3 +35,6 @@ WHERE ID= 3;
 UPDATE fashion_blog 
 SET date='DECEMBER 16, 2019' 
 WHERE ID= 4;
+
+
+DELETE FROM fashion_blog WHERE ID=;

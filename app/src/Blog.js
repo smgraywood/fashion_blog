@@ -1,11 +1,24 @@
 import * as React from "react";
 
+import { Form } from "./Form";
 import * as apiClient from "./apiClient";
 
 const Blog = () => {
   const [fashion_blog, setFashion_Blog] = React.useState([]);
   const [isAdding, setIsAdding] = React.useState(false);
   console.log("1", fashion_blog);
+
+  // const addPost = (post) => {
+  //   console.log("addPost", post);
+  //   const thing = apiClient
+  //     .addPost(post)
+  //     .then(loadBlogs)
+  //     .catch((e) => {
+  //       console.log(e);
+  //     });
+  //   console.log(thing);
+  // };
+  const addPost = (post) => apiClient.addPost(post).then(loadBlogs);
 
   const loadBlogs = () => apiClient.getBlog().then(setFashion_Blog);
   React.useEffect(() => {
@@ -19,12 +32,12 @@ const Blog = () => {
 
   return (
     <section>
-      <BlogsList blogs={fashion_blog} addBlogs={addBlog} />
+      <BlogsList blogs={fashion_blog} addBlogs={addBlog} addPost={addPost} />
     </section>
   );
 };
 
-const BlogsList = ({ blogs, addBlogs }) => {
+const BlogsList = ({ blogs, addBlog, addPost }) => {
   const [showForm, updateShowForm] = React.useState(false);
   const onSubmit = (e) => {
     e.preventDefault();
@@ -46,8 +59,8 @@ const BlogsList = ({ blogs, addBlogs }) => {
           <li>{image_description}</li> <br /> <h3>{date}</h3>
         </ul>
       ))}
-      <button onClick={onSubmit}>Add Comment</button>
-      {showForm ? <h1>This is where the form will be for comments</h1> : null}
+      <button onClick={onSubmit}>Add Blog Post</button>
+      {showForm ? <Form addPost={addPost} /> : null}
     </>
   );
 };

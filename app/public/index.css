@@ -72,9 +72,9 @@ li {
   font-family: 'Playfair Display', serif;
 }
 button {
-  display: inline-block;
+  display: flex;
   align-items: center;
-  margin: auto 0;
+  margin: auto;
   justify-content: center;
   cursor: pointer;
   border: 0.5 px solid gray;
@@ -87,5 +87,20 @@ button {
   width: 100px;
 }
 a {
+  color: #000;
+}
+
+form{
+  display:block;
+  background-color: #ffffff;
+  width: 300px;
+  margin: 10px;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2-rhDI0RRYOuUtNpQUXaT-4k8gSZQAbJc6_a_yBYI07Oz97_f_UwCrl2vQwPaKZtGG5s&usqp=CAU");
+  border-radius: 20px;
+  padding:30px;
+  margin: auto;
+  font-family: 'Raleway', sans-serif;
+}
+#blog{
   color: #000;
 }
